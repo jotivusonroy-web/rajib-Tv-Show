@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05050a">
+  <meta name="description" content="Rajib Tv Show — ultra cinematic live TV player">
+  <title>Rajib Tv Show</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Rajib Tv Show home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span class="brand-text">RAJIB <b>TV SHOW</b></span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" id="themeBtn" title="Visual mode">◐</button>
+      <button class="icon-btn" id="favOnlyBtn" title="Show favorites">♡</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><i></i> LIVE TELEVISION EXPERIENCE</div>
+        <h1>Rajib <span>Tv Show</span></h1>
+        <p>Watch your channels in a cinematic, fast and responsive TV interface.</p>
+        <div class="hero-pills">
+          <span>● LIVE</span><span id="countPill">Loading channels…</span><span>HD READY</span>
+        </div>
+      </div>
+      <div class="hero-orbit"><div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="orbit-core">RTV</div></div>
+    </section>
+
+    <section class="player-wrap">
+      <div class="player-shell">
+        <div class="player-head">
+          <div>
+            <div class="live-dot"><span></span> NOW PLAYING</div>
+            <h2 id="nowTitle">Select a channel</h2>
+          </div>
+          <div class="player-tools">
+            <button id="muteBtn">🔊</button>
+            <button id="fullBtn">⛶</button>
+          </div>
+        </div>
+        <div class="video-stage" id="videoStage">
+          <video id="video" controls playsinline preload="metadata"></video>
+          <div class="player-empty" id="playerEmpty">
+            <div class="play-orb">▶</div>
+            <h3>Choose a channel to start</h3>
+            <p>Live streams will appear here.</p>
+          </div>
+          <div class="loading" id="loading"><span></span><span></span><span></span></div>
+        </div>
+        <div class="player-status"><span id="statusDot"></span><span id="statusText">Ready</span><span class="spacer"></span><span id="qualityText">AUTO</span></div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="search">
+        <span>⌕</span><input id="search" type="search" placeholder="Search channels…" autocomplete="off">
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="Bangla">Bangla</button>
+        <button class="filter" data-filter="Sports">Sports</button>
+        <button class="filter" data-filter="News">News</button>
+        <button class="filter" data-filter="Movies">Movies</button>
+        <button class="filter" data-filter="Kids">Kids</button>
+        <button class="filter" data-filter="Entertainment">Entertainment</button>
+      </div>
+    </section>
+
+    <section class="section-title">
+      <div><span class="mini-line"></span><h2>Channel Universe</h2></div>
+      <span id="resultCount"></span>
+    </section>
+    <section class="channel-grid" id="channelGrid"></section>
+  </main>
+
+  <footer>
+    <div><strong>RAJIB TV SHOW</strong><span> • </span> Live entertainment interface</div>
+    <div class="footer-note">Streams are loaded from the URLs supplied in your M3U playlist.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
